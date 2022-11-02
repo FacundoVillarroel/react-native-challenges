@@ -2,6 +2,6 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   listContainer:{
-    width:"80%",
+    width:"82%",
   }
 })

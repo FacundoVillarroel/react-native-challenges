@@ -3,11 +3,7 @@ import { FlatList, View, Text } from 'react-native';
 import {styles} from "./styles"
 import ListItem from './listItem/ListItem';
 
-const List = ({list}) => {
-
-  const onHandleSelected = (item) => {
-    return null
-  }
+const List = ({list, onHandleSelected}) => {
 
   const renderItem = ({item}) => (
     <ListItem item={item} onHandleSelected={onHandleSelected}/>
