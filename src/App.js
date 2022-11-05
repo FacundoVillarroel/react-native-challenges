@@ -1,24 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
 import { View } from 'react-native';
 import {styles} from './styles';
-import Input from './components/input/Input';
 import { useState } from 'react';
-import List from './components/list/List';
-import ItemModal from './components/modal/Modal';
+import { Input, List, ItemModal } from "./components/index";
 
 export default function App() {
 
   const [pet, setPet] = useState('');
   const [petList, setPetList] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(null)
+  const [selectedItem, setSelectedItem] = useState(null);
 
   const onHandleChange = (text) => {
     setPet(text)
   }
 
   const handleAddPet = () => {
-    setPetList((prevList) => [...prevList,{id: Math.random().toString(), value: pet}])
+    setPetList((prevList) => [...prevList,{id: Math.random().toString(), value: pet, status:"lost"}])
     setPet('');
   }
 
@@ -36,12 +34,26 @@ export default function App() {
     setModalVisible(!modalVisible)
   }
 
+  const onHandleFound = () => {
+    let currentPet = petList.find(pet => pet.id === selectedItem.id)
+    currentPet.status = "found" 
+    let currentList = petList.filter(pet => pet.id !== selectedItem.id)
+    setPetList([...currentList, currentPet])
+    setModalVisible(!modalVisible)
+  }
+
   return (
     <View style={styles.container}>
       <Input pet={pet} handleAddPet={handleAddPet} onHandleChange={onHandleChange}/>
         <List list={petList} onHandleSelected={onHandleSelected}/>
       <StatusBar style="auto" />
-      <ItemModal modalVisible={modalVisible} selectedItem={selectedItem} onHandleCancel={onHandleCancel} onHandleDeleteItem={onHandleDeleteItem}/>
+      <ItemModal 
+        modalVisible={modalVisible} 
+        selectedItem={selectedItem}
+        onHandleFound={onHandleFound}
+        onHandleCancel={onHandleCancel}
+        onHandleDeleteItem={onHandleDeleteItem}
+      />
     </View>
   );
 }

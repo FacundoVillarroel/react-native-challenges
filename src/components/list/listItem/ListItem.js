@@ -6,6 +6,7 @@ const ListItem = ({item, onHandleSelected}) => {
     return (
         <TouchableOpacity style={styles.listItemContainer} onPress={() => onHandleSelected(item)}>
             <Text style={styles.listItem}>{item.value}</Text>
+            <Text style={styles.listItemStatus}>{item.status}</Text>
         </TouchableOpacity>
     )
 }

@@ -11,7 +11,7 @@ const Input = ({pet, handleAddPet, onHandleChange}) => {
         placeholder='Enter Pet'
         onChangeText={onHandleChange}
       />
-      <Button title='Add' onPress={handleAddPet} />
+      <Button title='Add' onPress={handleAddPet} color="#66bfbf"/>
     </View>
   )
 }

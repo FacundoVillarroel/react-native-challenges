@@ -2,10 +2,12 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   listItemContainer: {
+    flexDirection:"row",
+    justifyContent:"space-between",
     paddingVertical: 20,
-    backgroundColor: '#66bfbf',
+    backgroundColor: '#f76b8a',
     borderRadius: 5,
-    shadowColor: "#000",
+    shadowColor: "#212121",
     shadowOffset: {
         width: 0,
         height: 2,
@@ -13,12 +15,14 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
-    justifyContent: 'center',
     marginVertical: 5,
   },
   listItem: {
     fontSize: 14,
     color: '#eaf6f6',
-    paddingHorizontal: 10,
+    paddingHorizontal: 20,
   },
+  listItemStatus:{
+    paddingHorizontal:20
+  }
 });
