@@ -8,10 +8,10 @@ const Input = ({pet, handleAddPet, onHandleChange}) => {
       <TextInput 
         style ={styles.input}
         value={pet}
-        placeholder='Enter Pet'
+        placeholder='Ingrese Mascota Perdida'
         onChangeText={onHandleChange}
       />
-      <Button title='Add' onPress={handleAddPet} color="#66bfbf"/>
+      <Button title='Agregar' onPress={handleAddPet} color="#66bfbf"/>
     </View>
   )
 }
