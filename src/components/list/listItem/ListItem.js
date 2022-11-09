@@ -4,7 +4,7 @@ import { styles } from './styles';
 
 const ListItem = ({item, onHandleSelected}) => {
 
-    const status = (item.status === "lost") ? "Perdido" : "Encontrado";
+    const status = (item.isLost) ? "Perdido" : "Encontrado";
 
     return (
         <TouchableOpacity style={styles.listItemContainer} onPress={() => onHandleSelected(item)}>

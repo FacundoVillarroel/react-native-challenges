@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     flexDirection:"row",
     justifyContent:"space-between",
     paddingVertical: 20,
-    backgroundColor: '#f76b8a',
+    backgroundColor: '#ff6f3c',
     borderRadius: 5,
     shadowColor: "#212121",
     shadowOffset: {
@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
   },
   listItem: {
     fontSize: 14,
-    color: '#eaf6f6',
+    color: '#fff',
     paddingHorizontal: 20,
   },
   listItemStatus:{

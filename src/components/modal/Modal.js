@@ -11,7 +11,7 @@ const ItemModal = ({modalVisible, selectedItem, onHandleFound, onHandleCancel, o
             <View style={styles.buttonFound}>
               <Button
                 title='Marcar Como Encontrado'
-                color='#66bfbf'
+                color='#ffc93c'
                 onPress={onHandleFound}
               />
             </View>
@@ -21,12 +21,12 @@ const ItemModal = ({modalVisible, selectedItem, onHandleFound, onHandleCancel, o
           <View style={styles.modalButtonContainer}>
             <Button 
               title='Cancel'
-              color='#f76b8a'
+              color='#66bfbf'
               onPress={onHandleCancel}
             />
             <Button 
               title='Delete'
-              color='#f76b8a'
+              color='#66bfbf'
               onPress={onHandleDeleteItem}
             />
           </View>

@@ -16,7 +16,7 @@ export default function App() {
   }
 
   const handleAddPet = () => {
-    setPetList((prevList) => [...prevList,{id: Math.random().toString(), value: pet, status:"lost"}])
+    setPetList((prevList) => [...prevList,{id: Math.random().toString(), value: pet, isLost:true}])
     setPet('');
   }
 
@@ -35,10 +35,12 @@ export default function App() {
   }
 
   const onHandleFound = () => {
-    let currentPet = petList.find(pet => pet.id === selectedItem.id)
-    currentPet.status = "found" 
-    let currentList = petList.filter(pet => pet.id !== selectedItem.id)
-    setPetList([...currentList, currentPet])
+    setPetList(
+      petList.map(pet => {
+        if (pet.id === selectedItem.id) pet.isLost = false;
+        return pet
+        })
+      )
     setModalVisible(!modalVisible)
   }
 

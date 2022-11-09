@@ -5,13 +5,16 @@ const Input = ({pet, handleAddPet, onHandleChange}) => {
 
   return (
     <View style={styles.inputContainer}> 
-      <TextInput 
+      <TextInput
+        color="#fff"
+        placeholderTextColor="#fff"
+        cursorColor="#ff9a3c"
         style ={styles.input}
         value={pet}
         placeholder='Ingrese Mascota Perdida'
         onChangeText={onHandleChange}
       />
-      <Button title='Agregar' onPress={handleAddPet} color="#66bfbf"/>
+      <Button title='Agregar' onPress={handleAddPet} color="#ff6f3c"/>
     </View>
   )
 }
